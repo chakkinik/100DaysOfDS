@@ -1,4 +1,4 @@
-package com.hunderd.days.ds1;
+package com.hundred.days.ds1;
 
 public interface Stack<E> {
 	

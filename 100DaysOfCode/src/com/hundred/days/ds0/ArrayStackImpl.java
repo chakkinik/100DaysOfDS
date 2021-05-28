@@ -1,4 +1,4 @@
-package com.hunderd.days.ds0;
+package com.hundred.days.ds0;
 
 public class ArrayStackImpl {
 

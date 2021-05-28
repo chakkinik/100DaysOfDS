@@ -1,9 +1,21 @@
-package com.hundered.days.ds2;
+package com.hundred.days.ds2;
 
 public class SingleLinkedList<E>{
 	
 	
+	Node<E> head;
+	
+	public SingleLinkedList() {
+		
+	}
+	
 	public void add(E e) {
+		Node node = new Node<E>();
+		node.setElement(e);
+		if(head==null) {
+			head=node;
+		}
+		
 		
 	}
 	

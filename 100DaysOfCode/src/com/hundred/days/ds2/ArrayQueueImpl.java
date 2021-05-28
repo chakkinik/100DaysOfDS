@@ -1,4 +1,4 @@
-package com.hundered.days.ds2;
+package com.hundred.days.ds2;
 
 public class ArrayQueueImpl implements Queue<Integer> {
 
