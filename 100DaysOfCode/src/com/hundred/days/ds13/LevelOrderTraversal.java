@@ -28,7 +28,7 @@ public class LevelOrderTraversal {
 			 TreeNode node = q.poll();
 			 
 			 if(node!=null) {
-			 System.out.println(node.data);
+				 System.out.print(node.data+"=>");
 			 
 			 q.add(node.left);
 			 q.add(node.right);
