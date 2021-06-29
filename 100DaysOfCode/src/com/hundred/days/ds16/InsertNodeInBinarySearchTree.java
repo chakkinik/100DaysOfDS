@@ -5,31 +5,37 @@ import com.hundred.days.ds13.TreeNode;
 import com.hundred.days.ds13.TreeUtils;
 
 public class InsertNodeInBinarySearchTree {
-	
+
 	public static void main(String[] args) {
 		TreeNode root = TreeUtils.getTree();
 		TreeNode insertNode = new TreeNode(15);
-		insertBinaryTree(root,insertNode);
+		insertBinaryTree(root, insertNode);
 		LevelOrderTraversal.printLevelOrder(root);
-		
+
 	}
 
 	private static TreeNode insertBinaryTree(TreeNode root, TreeNode insertNode) {
-		
-		if(root==null) {
-			return null;
+
+		if (root == null) {
+			root = insertNode;
+			return root;
 		}
-		
-		if(insertNode.data>root.data) {
-			root.right =insertBinaryTree(root.right, insertNode);
-			
-			
+
+		if (insertNode.data > root.data) {
+			if (root.right == null) {
+				root.right = insertNode;
+			} else
+				insertBinaryTree(root.right, insertNode);
+
 		} else {
-			root.left =insertBinaryTree(root.left, insertNode);
+			if (root.left == null) {
+				root.left = insertNode;
+			} else
+				root.left = insertBinaryTree(root.left, insertNode);
 		}
-		
-		return insertNode;
-		
+
+		return root;
+
 	}
 
 }
