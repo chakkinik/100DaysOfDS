@@ -10,7 +10,7 @@ public class TreeUtils {
 		root.right.left = new TreeNode(50);
 		root.left.left = new TreeNode(10);
 		root.left.right = new TreeNode(30);
-		root.left.right.left = new TreeNode(15);
+		//root.left.right.left = new TreeNode(15);
 		
 		return root;
 	}

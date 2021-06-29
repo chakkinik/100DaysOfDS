@@ -16,9 +16,9 @@ public class TreeLCA {
 
 		if (root == null) {
 			return null;
-		}
+	}
 		
-		if(root.data==i || root.data==j) {
+		if(root.data==i | root.data==j) {
 			return root;
 		}
 		

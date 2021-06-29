@@ -14,7 +14,7 @@ public class LevelOrderTraversal {
 		printLevelOrder(root);
 	}
 
-	private static void printLevelOrder(TreeNode root) {
+	public static void printLevelOrder(TreeNode root) {
 		
 		if(root==null) {
 			return;
