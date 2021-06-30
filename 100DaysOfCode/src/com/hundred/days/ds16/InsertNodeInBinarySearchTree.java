@@ -11,6 +11,8 @@ public class InsertNodeInBinarySearchTree {
 		TreeNode insertNode = new TreeNode(15);
 		insertBinaryTree(root, insertNode);
 		LevelOrderTraversal.printLevelOrder(root);
+		deleteRoot(root, insertNode);
+		LevelOrderTraversal.printLevelOrder(root);
 
 	}
 
@@ -21,7 +23,7 @@ public class InsertNodeInBinarySearchTree {
 			return root;
 		}
 
-		if (insertNode.data > root.data) {
+		if (insertNode.data >= root.data) {
 			if (root.right == null) {
 				root.right = insertNode;
 			} else
@@ -30,6 +32,30 @@ public class InsertNodeInBinarySearchTree {
 		} else {
 			if (root.left == null) {
 				root.left = insertNode;
+			} else
+				root.left = insertBinaryTree(root.left, insertNode);
+		}
+
+		return root;
+
+	}
+	
+	private static TreeNode deleteRoot(TreeNode root, final TreeNode insertNode) {
+
+		if (root == null) {
+			//root = insertNode;
+			return root;
+		}
+
+		if (insertNode.data > root.data) {
+			if (root.right !=null && root.right.data==insertNode.data) {
+				root.right = null;
+			} else
+				insertBinaryTree(root.right, insertNode);
+
+		} else {
+			if (root.left !=null && root.left.data==insertNode.data) {
+				root.left = null;
 			} else
 				root.left = insertBinaryTree(root.left, insertNode);
 		}
