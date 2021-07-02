@@ -17,10 +17,16 @@ public class InOrderSuccessor {
 		if(root==null) {
 			return null;
 		}
-			TreeNode left = inOrderSuccessor(root.left,k);
-			TreeNode right= inOrderSuccessor(root.right,k);
+		
+		
+			if((root.left!=null && root.left.data==k) && (root.right!=null || root.right.data==k)) {
+				System.out.println(root.data);
+			}
+			 inOrderSuccessor(root.left,k);
+			inOrderSuccessor(root.right,k);
 		    
-			System.out.println(root.data);
+			
+			
 			/*if(left!=null)
 			System.out.println("left=>"+left.data);
 			
